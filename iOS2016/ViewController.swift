@@ -21,7 +21,11 @@ class ViewController: UIViewController {
   var city: [String: Any] = [:]
 
   @IBOutlet var searchTextField: UITextField?
-  @IBOutlet var tableView: UITableView?
+  @IBOutlet var tableView: UITableView? {
+    didSet {
+      tableView?.tableFooterView = UIView()
+    }
+  }
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -32,7 +36,7 @@ class ViewController: UIViewController {
   func searchCityBy(name: String?) {
     guard let name = name else { return }
 
-    let parameters = ["appid": APPID, "q": name]
+    let parameters = ["appid": APPID, "q": name, "units": "metric"]
 
     Alamofire.request("http://api.openweathermap.org/data/2.5/forecast", parameters: parameters).responseJSON { response in
       guard let json = response.result.value as? [String: Any] else { return }
@@ -55,6 +59,7 @@ class ViewController: UIViewController {
     } else {
       title = "No city found"
     }
+    tableView?.reloadData()
   }
 
   @IBAction func searchAction(_ sender: Any) {
@@ -69,5 +74,28 @@ extension ViewController: UITextFieldDelegate {
     textField.resignFirstResponder()
     searchCityBy(name: searchTextField?.text)
     return true
+  }
+}
+
+extension ViewController: UITableViewDataSource {
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return data.count
+  }
+
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    guard let item = data[indexPath.row] as? [String: Any] else { return UITableViewCell() }
+
+    let cell = tableView.dequeueReusableCell(withIdentifier: "WeatherCell", for: indexPath)
+
+    if let weather = item["weather"] as? [[String: Any]],
+      let description = weather.first?["description"] as? String {
+      cell.textLabel?.text = description
+    }
+
+    if let main = item["main"] as? [String: Any],
+      let temp = main["temp"] as? Double {
+      cell.detailTextLabel?.text = "\(temp)°"
+    }
+    return cell
   }
 }
