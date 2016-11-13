@@ -13,10 +13,19 @@ let APPID = "8bf89043ed67d500bd2942c4f4084f45"
 
 class ViewController: UIViewController {
 
+
+  /// An array with the weather data
+  var data: [Any] = []
+
+  /// A dictionary with the city's info
+  var city: [String: Any] = [:]
+
   @IBOutlet var searchTextField: UITextField?
 
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    title = "Weather"
   }
 
   func searchCityBy(name: String?) {
@@ -27,7 +36,23 @@ class ViewController: UIViewController {
     Alamofire.request("http://api.openweathermap.org/data/2.5/forecast", parameters: parameters).responseJSON { response in
       guard let json = response.result.value as? [String: Any] else { return }
 
-      print(json)
+      if let city = json["city"] as? [String: Any] {
+        self.city = city
+      }
+
+      if let list = json["list"] as? [Any] {
+        self.data = list
+      }
+
+      self.updateUI()
+    }
+  }
+
+  func updateUI() {
+    if let name = city["name"] as? String {
+      title = name
+    } else {
+      title = "No city found"
     }
   }
 
