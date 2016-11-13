@@ -21,6 +21,7 @@ class ViewController: UIViewController {
   var city: [String: Any] = [:]
 
   @IBOutlet var searchTextField: UITextField?
+  @IBOutlet var tableView: UITableView?
 
   override func viewDidLoad() {
     super.viewDidLoad()
