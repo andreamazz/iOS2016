@@ -88,14 +88,22 @@ extension ViewController: UITableViewDataSource {
     let cell = tableView.dequeueReusableCell(withIdentifier: "WeatherCell", for: indexPath)
 
     if let weather = item["weather"] as? [[String: Any]],
-      let description = weather.first?["description"] as? String {
+      let description = weather.first?["description"] as? String,
+      let icon = weather.first?["icon"] as? String {
       cell.textLabel?.text = description
+
+      let index = icon.index(icon.startIndex, offsetBy: 2)
+      let iconName = icon.substring(to: index)
+      if let image = UIImage(named: iconName) {
+        cell.imageView?.image = image
+      }
     }
 
     if let main = item["main"] as? [String: Any],
       let temp = main["temp"] as? Double {
       cell.detailTextLabel?.text = "\(temp)°"
     }
+
     return cell
   }
 }
