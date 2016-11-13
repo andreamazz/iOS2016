@@ -41,7 +41,9 @@
 				65E472731DD8BDEA00133504 /* iOS2016 */,
 				65E472721DD8BDEA00133504 /* Products */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 2;
 		};
 		65E472721DD8BDEA00133504 /* Products */ = {
 			isa = PBXGroup;

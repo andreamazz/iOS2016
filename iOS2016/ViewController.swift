@@ -10,16 +10,26 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
+  @IBOutlet var searchTextField: UITextField?
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+  override func viewDidLoad() {
+    super.viewDidLoad()
+  }
 
+  func searchCityBy(name: String?) {
+    guard let name = name else { return }
+  }
+
+  @IBAction func searchAction(_ sender: Any) {
+    searchCityBy(name: searchTextField?.text)
+  }
 
 }
 
+extension ViewController: UITextFieldDelegate {
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    textField.resignFirstResponder()
+    searchCityBy(name: searchTextField?.text)
+    return true
+  }
+}
