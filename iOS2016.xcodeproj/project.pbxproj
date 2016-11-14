@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		658079481DD9F122000CADF5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658079471DD9F122000CADF5 /* DetailViewController.swift */; };
 		65E472751DD8BDEA00133504 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E472741DD8BDEA00133504 /* AppDelegate.swift */; };
 		65E472771DD8BDEA00133504 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E472761DD8BDEA00133504 /* ViewController.swift */; };
 		65E4727A1DD8BDEA00133504 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65E472781DD8BDEA00133504 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		171E09521F2AB42E8F357CC4 /* Pods-iOS2016.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS2016.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS2016/Pods-iOS2016.release.xcconfig"; sourceTree = "<group>"; };
+		658079471DD9F122000CADF5 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		65E472711DD8BDEA00133504 /* iOS2016.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS2016.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65E472741DD8BDEA00133504 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65E472761DD8BDEA00133504 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -40,6 +42,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		658079491DD9F128000CADF5 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				658079471DD9F122000CADF5 /* DetailViewController.swift */,
+				65E472761DD8BDEA00133504 /* ViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		6580794A1DD9F139000CADF5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				65E472741DD8BDEA00133504 /* AppDelegate.swift */,
+				65E472781DD8BDEA00133504 /* Main.storyboard */,
+				65E4727B1DD8BDEA00133504 /* Assets.xcassets */,
+				65E4727D1DD8BDEA00133504 /* LaunchScreen.storyboard */,
+				65E472801DD8BDEA00133504 /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		65E472681DD8BDE900133504 = {
 			isa = PBXGroup;
 			children = (
@@ -63,12 +86,8 @@
 		65E472731DD8BDEA00133504 /* iOS2016 */ = {
 			isa = PBXGroup;
 			children = (
-				65E472741DD8BDEA00133504 /* AppDelegate.swift */,
-				65E472761DD8BDEA00133504 /* ViewController.swift */,
-				65E472781DD8BDEA00133504 /* Main.storyboard */,
-				65E4727B1DD8BDEA00133504 /* Assets.xcassets */,
-				65E4727D1DD8BDEA00133504 /* LaunchScreen.storyboard */,
-				65E472801DD8BDEA00133504 /* Info.plist */,
+				658079491DD9F128000CADF5 /* ViewControllers */,
+				6580794A1DD9F139000CADF5 /* Resources */,
 			);
 			path = iOS2016;
 			sourceTree = "<group>";
@@ -214,6 +233,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				658079481DD9F122000CADF5 /* DetailViewController.swift in Sources */,
 				65E472771DD8BDEA00133504 /* ViewController.swift in Sources */,
 				65E472751DD8BDEA00133504 /* AppDelegate.swift in Sources */,
 			);
