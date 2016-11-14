@@ -13,12 +13,17 @@ let APPID = "8bf89043ed67d500bd2942c4f4084f45"
 
 class ViewController: UIViewController {
 
-
   /// An array with the weather data
   var data: [Any] = []
 
   /// A dictionary with the city's info
   var city: [String: Any] = [:]
+
+  let dateFormatter: DateFormatter = {
+    let df = DateFormatter()
+    df.dateFormat = "dd MMMM, HH:mm"
+    return df
+  }()
 
   @IBOutlet var searchTextField: UITextField?
   @IBOutlet var tableView: UITableView? {
@@ -96,9 +101,11 @@ extension ViewController: UITableViewDataSource {
     let cell = tableView.dequeueReusableCell(withIdentifier: "WeatherCell", for: indexPath)
 
     if let weather = item["weather"] as? [[String: Any]],
-      let description = weather.first?["description"] as? String,
+      let time = item["dt"] as? Double,
       let icon = weather.first?["icon"] as? String {
-      cell.textLabel?.text = description
+
+      let date = Date(timeIntervalSince1970: time)
+      cell.textLabel?.text = dateFormatter.string(from: date)
 
       let index = icon.index(icon.startIndex, offsetBy: 2)
       let iconName = icon.substring(to: index)

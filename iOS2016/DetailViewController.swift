@@ -27,6 +27,18 @@ class DetailViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    if let weather = data["weather"] as? [[String: Any]],
+      let description = weather.first?["description"] as? String,
+      let icon = weather.first?["icon"] as? String {
+      label?.text = description
+
+      let index = icon.index(icon.startIndex, offsetBy: 2)
+      let iconName = icon.substring(to: index)
+      if let image = UIImage(named: iconName) {
+        imageView?.image = image
+      }
+    }
   }
 
 }
