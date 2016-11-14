@@ -124,7 +124,7 @@
         <!--Detail View Controller-->
         <scene sceneID="30j-Gf-YPC">
             <objects>
-                <viewController id="ZZZ-Xu-vrb" customClass="DetailViewController" customModule="iOS2016" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" id="ZZZ-Xu-vrb" customClass="DetailViewController" customModule="iOS2016" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FzJ-MI-C1T"/>
                         <viewControllerLayoutGuide type="bottom" id="KRJ-1W-GWp"/>
@@ -149,7 +149,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lQs-Xy-m97">
                                 <rect key="frame" x="0.0" y="209" width="375" height="458"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.94999999999999996" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="Wfl-ym-tVA" detailTextLabel="wK9-F9-gwU" rowHeight="60" style="IBUITableViewCellStyleValue1" id="kQ6-3l-zHr">
                                         <rect key="frame" x="0.0" y="28" width="375" height="60"/>

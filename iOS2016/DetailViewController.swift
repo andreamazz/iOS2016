@@ -22,6 +22,9 @@ class DetailViewController: UIViewController {
 
   var data: [String: Any] = [:]
 
+  let temperatureKeys = ["temp", "temp_min", "temp_max", "pressure", "sea_level", "grnd_level", "humidity"]
+  let windKeys = ["speed", "deg"]
+
   override func viewDidLoad() {
     super.viewDidLoad()
   }
@@ -29,11 +32,47 @@ class DetailViewController: UIViewController {
 }
 
 extension DetailViewController: UITableViewDataSource {
+  func numberOfSections(in tableView: UITableView) -> Int {
+    return 2
+  }
+
+  func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    switch section {
+    case 0:
+      return "Temperature"
+    default:
+      return "Wind"
+    }
+  }
+
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 0
+    switch section {
+    case 0:
+      return 7
+    default:
+      return 2
+    }
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    return tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+    let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+
+    if indexPath.section == 0 {
+      let key = temperatureKeys[indexPath.row]
+      if let temperature = data["main"] as? [String: Any], let value = temperature[key] as? Double {
+        cell.detailTextLabel?.text = "\(value)"
+        cell.textLabel?.text = key
+      }
+    }
+
+    if indexPath.section == 1 {
+      let key = windKeys[indexPath.row]
+      if let wind = data["wind"] as? [String: Any], let value = wind[key] as? Double {
+        cell.detailTextLabel?.text = "\(value)"
+        cell.textLabel?.text = key
+      }
+    }
+    
+    return cell
   }
 }
