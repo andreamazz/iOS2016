@@ -39,6 +39,10 @@ class DetailViewController: UIViewController {
         imageView?.image = image
       }
     }
+
+    UIView.animate(withDuration: 1, delay: 0, options: [.autoreverse, .repeat] , animations: {
+      self.imageView?.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+    }, completion: nil)
   }
 
 }

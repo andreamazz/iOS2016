@@ -112,6 +112,11 @@ extension ViewController: UITableViewDataSource {
       if let image = UIImage(named: iconName) {
         cell.imageView?.image = image
       }
+      if iconName == "01" {
+        UIView.animate(withDuration: 2, delay: 0, options: [.autoreverse, .repeat] , animations: {
+          cell.imageView?.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
+        }, completion: nil)
+      }
     }
 
     if let main = item["main"] as? [String: Any],
