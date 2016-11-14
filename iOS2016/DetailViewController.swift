@@ -61,7 +61,7 @@ extension DetailViewController: UITableViewDataSource {
       let key = temperatureKeys[indexPath.row]
       if let temperature = data["main"] as? [String: Any], let value = temperature[key] as? Double {
         cell.detailTextLabel?.text = "\(value)"
-        cell.textLabel?.text = key
+        cell.textLabel?.text = NSLocalizedString(key, comment: "")
       }
     }
 
@@ -69,7 +69,7 @@ extension DetailViewController: UITableViewDataSource {
       let key = windKeys[indexPath.row]
       if let wind = data["wind"] as? [String: Any], let value = wind[key] as? Double {
         cell.detailTextLabel?.text = "\(value)"
-        cell.textLabel?.text = key
+        cell.textLabel?.text = NSLocalizedString(key, comment: "")
       }
     }
     

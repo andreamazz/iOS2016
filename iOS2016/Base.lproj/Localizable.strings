@@ -1,0 +1,9 @@
+"temp" = "Temperature";
+"temp_min" = "Minimum temp.";
+"temp_max" = "Maximum temp.";
+"pressure" = "Pressure";
+"sea_level" = "Sea Level";
+"grnd_level" = "Ground Level";
+"humidity" = "Humidity";
+"speed" = "Speed";
+"deg" = "Degrees";
