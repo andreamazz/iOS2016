@@ -54,7 +54,6 @@
 		6580794A1DD9F139000CADF5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				65E472741DD8BDEA00133504 /* AppDelegate.swift */,
 				65E472781DD8BDEA00133504 /* Main.storyboard */,
 				65E4727B1DD8BDEA00133504 /* Assets.xcassets */,
 				65E4727D1DD8BDEA00133504 /* LaunchScreen.storyboard */,
@@ -86,6 +85,7 @@
 		65E472731DD8BDEA00133504 /* iOS2016 */ = {
 			isa = PBXGroup;
 			children = (
+				65E472741DD8BDEA00133504 /* AppDelegate.swift */,
 				658079491DD9F128000CADF5 /* ViewControllers */,
 				6580794A1DD9F139000CADF5 /* Resources */,
 			);

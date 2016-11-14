@@ -177,6 +177,10 @@
                                         <color key="backgroundColor" white="0.94999999999999996" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="ZZZ-Xu-vrb" id="eCe-5M-DvT"/>
+                                    <outlet property="delegate" destination="ZZZ-Xu-vrb" id="jU5-YD-TqM"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="0.94999999999999996" alpha="1" colorSpace="calibratedWhite"/>
@@ -187,6 +191,11 @@
                             <constraint firstItem="o3h-hl-NbP" firstAttribute="top" secondItem="FzJ-MI-C1T" secondAttribute="bottom" constant="8" id="mQc-dm-2AJ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="o3h-hl-NbP" id="j9P-AH-zb1"/>
+                        <outlet property="label" destination="FLp-Dk-13O" id="YXf-VZ-KAA"/>
+                        <outlet property="tableView" destination="lQs-Xy-m97" id="Zsk-SI-BYw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ugk-YU-Bhg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
