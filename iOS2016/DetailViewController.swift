@@ -18,6 +18,10 @@ class DetailViewController: UIViewController {
   @IBOutlet var label: UILabel?
   @IBOutlet var imageView: UIImageView?
 
+  static let storyboardIdentifier = "DetailViewController"
+
+  var data: [String: Any] = [:]
+
   override func viewDidLoad() {
     super.viewDidLoad()
   }

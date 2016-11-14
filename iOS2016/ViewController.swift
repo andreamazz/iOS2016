@@ -67,6 +67,14 @@ class ViewController: UIViewController {
     searchTextField?.resignFirstResponder()
   }
 
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    guard let cell = sender as? UITableViewCell, let index = tableView?.indexPath(for: cell)?.row else { return }
+    guard let item = data[index] as? [String: Any] else { return }
+    guard let controller = storyboard?.instantiateViewController(withIdentifier: DetailViewController.storyboardIdentifier) as? DetailViewController else { return }
+
+    controller.data = item
+  }
+
 }
 
 extension ViewController: UITextFieldDelegate {
