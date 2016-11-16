@@ -112,6 +112,7 @@ extension ViewController: UITableViewDataSource {
       if let image = UIImage(named: iconName) {
         cell.imageView?.image = image
       }
+      cell.imageView?.transform = CGAffineTransform.identity
       if iconName == "01" {
         UIView.animate(withDuration: 2, delay: 0, options: [.autoreverse, .repeat] , animations: {
           cell.imageView?.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
